@@ -40,7 +40,7 @@ int main(){
 | < > <= >= != == | Boolean operators |
 | += -= *= /= %= | Compound asignation|
 | ++ -- | Unitary increase/decrease |
-| && \|\| | Logical operators |
+| && \|\| | Logical operators (and / or) |
 | & \| ^ ~ << >> (and, or, xor, not, left shift, right shift) | Bitwise operators
 | << >> | Stream operator |
 | :: | Scope operator |
