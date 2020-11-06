@@ -6,6 +6,7 @@ and then execute the file with the following in the terminal
 `./anyname`
 
 ## Variables and data types
+The variables in c++ shoud be always referenced before being called, the following table shows how the variables shoud be called:
 | Variable | Description | Memory |
 | ----------- | ----------- | ----------- | 
 | Int | Whole numbers | 4 bytes |
@@ -36,7 +37,6 @@ int main(){
 | Operator | Description |
 |--------- | ----------- |
 | + - * / % | Arithmetic operators |
-| + - * / % | Arithmetic operators |
 | < > <= >= != == | Boolean operators |
 | += -= *= /= %= | Compound asignation|
 | ++ -- | Unitary increase/decrease |
@@ -46,4 +46,11 @@ int main(){
 | :: | Scope operator |
 | new / delete | Memory allocation / disallocation |
 | & / * |  Reference / dereference |
+-Arithmetic operators perform the basic math we know
+-Boolean operators check is true or false
+-Coumpound asignation performs the operation on the left variable regarding the right one
+-Logical operators are used to add multiple conditions
+-Bitwise operators perform operations based on memory
+
+## 
  
