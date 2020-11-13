@@ -113,3 +113,87 @@ while(i < 100)
 
 // In this case it runs the code below do before starting the loop. Do always goes first.
 ```
+
+## Functions
+Functions are blocks of code that can be 'reused'. They are structured as `return_type function_name(arguments)` For instance, if we'd like to make a sum, writing a function that takes two arguments will do it.
+```
+int sum(int a; int b)
+{
+    return a+b;
+}
+```
+The function above returns an `int`, that can be obtained by adding `int a` and `int b`
+- To write functions for calling them later, implement a "implementation file", with name `anyname.cpp` Always include the header file.
+- To make a library to call back the functions implemented, write a header file as `anyname.h`.
+### Header File
+```
+#include<iostream>
+
+#pragma once
+int sum(int, int);
+int substract(int, int);
+```
+### Implementation file
+```
+#include"header.h"
+
+int sum(int a; int b)
+{
+    return a+b;
+}
+
+int substract(int a; int b)
+{
+    return a-b;
+}
+
+/// You need to compile this implementation for it to work
+```
+
+## Libraries 
+They are prewritten code blocks that you can reuse in your code. Also you can make your own libraries.
+- Libraries written by others can be called as `#include<libname>`.
+- Libraries writtwn by you can be accessed as `#include"libname.h"`.
+
+### Namespace
+Namespace is a declarative region that provides a scope to the identifiers (the names of types, functions, variables, etc) inside it.
+
+It's basically a set of intructions on how to run the code. They are declared as following: `using namespace something;`.
+- The general namespace used is called `std` --> `using namespace std;`.
+
+## Memory assignation
+
+The hardware of a PC consists of small components known as capacitors (saves binary values) and transistors (changes this binary values accordingly).
+
+Each cell in the memory stores a binary value, called bit.
+| Cell |
+| ---- |
+| 0 |
+| 1 |
+| bit |
+
+Since representing each cell's index as a binary number is complicated, people decided to use the hexadecimal system. 
+
+To further understand easily what's happening, 8 bits were grouped to form a byte.
+[Structure of a byte](img/byte.png)
+
+The operator `&` which is 'address of' retrieves the cell number where the variable was stored.
+```
+int main()
+{
+    int a = 5;
+    cout << &a;
+}
+
+>>> """returns the address of the memory"""
+```
+Consider each cell as a house and a variable lives in it, the `&` acts as a directory to get the house address of the variable.
+
+### Passing parameters as addresses
+By doing this, the parameters used in a function are not duplicated in memory.
+
+## Pointers
+
+## Referencing
+
+
