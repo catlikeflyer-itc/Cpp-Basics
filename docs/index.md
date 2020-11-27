@@ -1,5 +1,6 @@
 # C++ Basics
 Go to OOP in Cpp [here](oop.md)
+Go to C++ review [here](review.md)
 ## Compiling using g++
 Write the following on the terminal:
 `g++ filename.cpp -o anyname`
