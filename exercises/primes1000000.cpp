@@ -21,14 +21,15 @@ int main()
 {
     int count = 0;
 
-    for (int i = 1; i < 1001; i++){
+    for (int i = 1; i <= 1000000; i++)
+    {
         if (primo(i))
         {
-            count++;
+            count += 1;
         }
     }
 
-    cout << count << " numeros primos";
+    cout << "Hay " << count << " numeros primos entre 1 y 1000000";
 
     return 0;
 }
