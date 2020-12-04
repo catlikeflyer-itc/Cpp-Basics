@@ -1,16 +1,17 @@
 #include"normales.h"
+#include"MotorGasolina.h"
 
 AutoNormal::AutoNormal()
 {   
-    gasMotor = MotorGasolina();
+    MotorGasolina gasMotor(1,);
 };
-AutoNormal::AutoNormal(string laMarca, string elNombre, int elModelo, int laVelocidadMaxima, int losCilindros, int laPotencia)
+AutoNormal::AutoNormal(string laMarca, string elNombre, int elModelo, int laVelocidadMaxima, MotorGasolina elGasMotor)
 {
     marca = laMarca;
     nombre = elNombre;
     modelo = elModelo;
     velocidadMaxima = laVelocidadMaxima;
-    gasMotor = MotorGasolina(losCilindros, laPotencia);
+    gasMotor = elGasMotor;
 };
 
 void AutoNormal::setMotorGasolina(int losCilindros, int laPotencia)

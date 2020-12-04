@@ -1,16 +1,17 @@
 #include"electricos.h"
+#include"MotorElectrico.h"
 
 AutoElectrico::AutoElectrico()
 {
-    eMotor = MotorElectrico();
+    MotorElectrico eMotor(1,1);
 };
-AutoElectrico::AutoElectrico(string laMarca, string elNombre, int elModelo, int laVelocidadMaxima, int lasPilas, int laPotencia)
+AutoElectrico::AutoElectrico(string laMarca, string elNombre, int elModelo, int laVelocidadMaxima, MotorElectrico elEMotor)
 {
     marca = laMarca;
     nombre = elNombre;
     modelo = elModelo;
     velocidadMaxima = laVelocidadMaxima;
-    eMotor = MotorElectrico(lasPilas, laPotencia);
+    eMotor = elEMotor;
 };
 
 void AutoElectrico::setMotorElectrico(MotorElectrico elEmotor)

@@ -1,5 +1,8 @@
+#include<string>
 #include"auto.h"
 #include"MotorGasolina.h"
+
+using namespace std;
 
 #pragma once
 
@@ -10,7 +13,7 @@ protected:
 
 public:
     AutoNormal();
-    AutoNormal(string laMarca, string elNombre, int elModelo, int laVelocidadMaxima, int losCilindros, int laPotencia);
+    AutoNormal(string laMarca, string elNombre, int elModelo, int laVelocidadMaxima, MotorGasolina elGasMotor);
 
     void setMotorGasolina(int losCilindros, int laPotencia);
     MotorGasolina getMotorGasolina();

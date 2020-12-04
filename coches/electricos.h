@@ -1,5 +1,8 @@
+#include<string>
 #include"auto.h"
 #include"MotorElectrico.h"
+
+using namespace std;
 
 #pragma once
 
@@ -10,7 +13,7 @@ protected:
 
 public:
     AutoElectrico();
-    AutoElectrico(string laMarca, string elNombre, int elModelo, int laVelocidadMaxima, int lasPilas, int laPotencia);
+    AutoElectrico(string laMarca, string elNombre, int elModelo, int laVelocidadMaxima, MotorElectrico elEMotor);
 
     void setMotorElectrico(MotorElectrico elEMotor);
     MotorElectrico getMotorElectrico();
