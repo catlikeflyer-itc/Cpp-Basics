@@ -3,7 +3,7 @@
 
 AutoNormal::AutoNormal()
 {   
-    MotorGasolina gasMotor(1,);
+    MotorGasolina gasMotor(1,1);
 };
 AutoNormal::AutoNormal(string laMarca, string elNombre, int elModelo, int laVelocidadMaxima, MotorGasolina elGasMotor)
 {
