@@ -1,3 +1,4 @@
+// Si se utiliza "archivo.h" arroja un undefined error, por lo que se utilizo archivo.cpp para mitigarlo 
 #include<iostream>
 #include"frutas.cpp"
 #include"carne.cpp"
@@ -16,14 +17,15 @@ using namespace std;
 
 int main()
 {
-    int cantidad;
-    int productNum;
-    float total = 0.0;
-    bool seguirComprando = true;
+    int cantidad; // Cantidad del producto a comprar
+    int productNum; // Numero de producto
+    float total = 0.0; // Guarda el monto total de la compra
+    bool seguirComprando = true; // Booleano que determina si el comprador sigue comprando o finalizo la compra
 
     cout << "Bienvenidos a la Tienda DH, pueden seleccionar hasta 10 tipos de productos\n \n";
     Fecha fecha(12, 5, 2020);
 
+    // Declaracion de productos disponibles
     Fruta manzana("Manzana gala", 10.0, 1, 200, false, fecha);
     Carne pollo("Pollo adobado", 209.9, 2, 590,"pollo", fecha);
     Lego xwing;
@@ -48,12 +50,14 @@ int main()
     cout << "9." << gs10.getNombre() << ", " << gs10.getPrecio() << "pesos mexicanos, con camara de " << gs10.getResolucionCamara() << " MP.\n";
     cout << "10." << lgPantalla.getNombre() << "pesos mexicanos, con una resolucion de " << lgPantalla.getResolucion() << " pixeles.\n\n" ;
 
+    // Loop que ejecuta si hasta que no siga comprando
     while (seguirComprando)
     {
         cout << "'\nQue productos se va llevar? Presione 0 para finalizar compra: ";
         cin >> productNum;
         cout << "\n";
 
+        // Si input = 0 seguirComprando es false, sale del loop
         if (productNum == 0)
         {
             cout << "Finalizando Compra...";
@@ -61,9 +65,11 @@ int main()
         }
         else
         {
+            // Pregunta por la cantidad a comprar
             cout << "Cuantos quiere comprar? ";
             cin >> cantidad;
-
+    
+            // Determina dependiendo del numero del producto
             switch (productNum)
             {
             case 1: 
@@ -135,6 +141,7 @@ int main()
         }
 
     }
+    // Imprime el total en pesos mexicanos
     cout << "Su total es de " << total << " pesos mexicanos.";
 
     return 0;

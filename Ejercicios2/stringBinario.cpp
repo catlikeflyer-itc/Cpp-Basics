@@ -1,15 +1,13 @@
-/*Escribe una función que recibe un String de ceros y unos (string binario). La función revisa que el string sólo contenga ceros y unos. 
-La función convierte el string binario en un número decimal*/
+
 #include <iostream>
 #include <stdlib.h>
 #include <math.h>
-
 using namespace std;
 
-bool checkBinary(int* array, int length)
+bool stringBinario(int* array, int length)
 {
-    bool flag = true;
-    for(int i = 0; i < length; i++)
+    bool fl = true;
+    for (int i = 0; i < length; i++)
     {
         if(array[i] == 1 || array[i] == 0)
         {
@@ -17,61 +15,68 @@ bool checkBinary(int* array, int length)
         }
         else
         {
-            flag = false;
+            fl = false;
             break;
         }
         
     }
-    return flag;
+    return fl;
 }
 
-int* digitSplit(int num, int length)
+int* separar(int n, int length)
 {
-    int* digits = new int[length];
+    int* digitos = new int[length];
     int factor = 1, i = 0;
-    while(num>0)
+
+    while(n>0)
     {
-        digits[i] = num%10;
+        digitos[i] = n%10;
         factor *= 10;
-        num /= 10;
+        n /= 10;
         i+=1;
     }
-    return digits;
+    return digitos;
 }
 
-int getIntLength(int num)
+int getLargo(int n)
 {
-    int sum = 0;
-    while(num>0)
+    int suma = 0;
+    while(n>0)
     {
-        num/=10;
-        sum+=1;
+        n/=10;
+        suma+=1;
     }
-    return sum;
+    return suma;
 }
 
 int main()
 {
     int num;
-    cout << "Ingrese una cadena binaria\n";
+    cout << "Cadena binaria: ";
     cin >> num;
     cout << "\n";
-    int length = getIntLength(num);
-    int* digits = digitSplit(num, length);
-    bool flag = checkBinary(digits, length);
-    int sum = 0;
-    if(flag != true)
+
+    int length = getLargo(num);
+    int* digitos = separar(num, length);
+    bool fl = stringBinario(digitos, length);
+    int suma = 0;
+    bool checar = true;
+
+    while (checar)
     {
-        cout << "No es una cadena binaria valida\n";
-        exit(0);
-    }
-    else
-    {
-        for(int i = length; i > 0; i--)
+        if (fl == false)
         {
-            sum += digits[i-1]*pow(2,i-1);
+            cout << "!!Cadena Invalida!!\n";
+        }
+        else
+        {
+            for (int i = length; i > 0; i--)
+            {
+                suma += digitos[i-1]*pow(2,i-1);
+            }
+            checar = false;
         }
     }
-    cout << "En binario es " << sum << "\n";
+    cout << "En binario es " << suma << "\n";
     return 0;
 }

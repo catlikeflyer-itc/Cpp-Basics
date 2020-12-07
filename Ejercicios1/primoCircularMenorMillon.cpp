@@ -54,19 +54,15 @@ bool circular(int n)
   
 int main() 
 { 
-    int numero;
+    int total = 0;
 
-    cout << "Ingrese numero: ";
-    cin >> numero;
-    cout << "\n";
-
-    if (circular(numero)) 
+    for (int i = 0; i <= 1000000; i++)
     {
-        cout << "Es circular" << endl; 
+        if (primo(i) && circular(i))
+        {
+            total += 1;
+        }
     }
-    else
-    {
-        cout << "No es circular" << endl; 
-    }
-    return 0; 
+    cout << "Son " << total << " numeros primos circulares.";
+    return 0;
 } 
